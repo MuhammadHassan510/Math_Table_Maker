@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Table Finder | Muhammad Hassan</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            color: white;
+        }
+        h1{
+            text-align: center;
+        }
+        #tableForm{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1> Math Table Finder </h1>
+
+    <form onsubmit="findTable(); return false" id="tableForm">
+        <p>
+            Which Number Of Table You Want Input Here: <input type="number" id="tableOf">
+        </p>
+        <p>
+            How Many Times To Run It Input Here: <input type="number" id="tableTill">
+        </p>
+        <div id="tableGotten">
+
+        </div>
+        <button type="submit" id="tableButton"> Get Table </button>
+    </form>
+
+    <script>
+
+        function findTable(){
+
+            let num1 = +document.querySelector("#tableOf").innerHTML.value;
+            let num2 = +document.querySelector("#tableTill").innerHTML.value;
+            
+
+            for (let i = 0; i < num2; i++){
+
+                let count = `${num1} x ${i + 1} = ${ num1 * (i + 1)}`;
+                document.querySelector("#tableGotten").innerHTML( count );
+               /* (num1 + "x", i + 1,": ", num1 * (i + 1) ); */
+            }
+        }
+
+    </script>
+</body>
+</html>
